@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="module2pr31s8.RegistrationPage" WidthRequest="360" HeightRequest="640">
+    <AbsoluteLayout BackgroundColor="#32B898">
+        <Image Source="Picture1.png" WidthRequest="328" HeightRequest="184" Margin="16,106,16,350"/>
+        <Entry Text="Имя пользователя" FontSize="18" HorizontalTextAlignment="Center" WidthRequest="300"
+               HeightRequest="40" Margin="30,417,30,183" BackgroundColor="#FFFFFF" x:Name="EntryUsername"/>
+        <Entry Text="Пароль" FontSize="18" WidthRequest="300" HorizontalTextAlignment="Center" 
+               HeightRequest="40" Margin="30,477,30,123" BackgroundColor="#FFFFFF" x:Name="EntryPassword"/>
+        <Button Text="Регистрация" FontSize="18" HeightRequest="50" WidthRequest="150" 
+                Margin="105,555,105,35" Clicked="Registration" BackgroundColor="#4A799A"/>
+    </AbsoluteLayout>
+</ContentPage>
