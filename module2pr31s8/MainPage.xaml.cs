@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 using System.IO;
 
 namespace module2pr31s8
@@ -12,48 +13,33 @@ namespace module2pr31s8
     public partial class MainPage : ContentPage
     {
         string[] Systems;
+        int[] SystemNumbers;
         public MainPage()
         {
             InitializeComponent();
-            if (File.Exists("file.txt"))
-            {
-
-            }
-            else
-            {
-                GoToLoginPage();
-            }
-            File.Create("file.txt");
-            Systems = new string[] { "N2", "N3", "N8", "N10", "N16" };
+            Systems = new string[] { "N2", "N8", "N10", "N16" };
+            SystemNumbers = new int[] { 2, 8, 10, 16 };
             FirstSystem.ItemsSource = Systems;
             FirstSystem.SelectedItem = Systems[0];
-            SeconsSystem.ItemsSource = Systems;
-            SeconsSystem.SelectedItem = Systems[0];
-        }
-
-        private async void GoToRegistrationPage()
-        {
-            await Navigation.PushModalAsync(new RegistrationPage());
+            SecondSystem.ItemsSource = Systems;
+            SecondSystem.SelectedItem = Systems[0];
+            GoToLoginPage();
         }
 
         private async void GoToLoginPage()
         {
             await Navigation.PushModalAsync(new LoginPage());
-            GoToRegistrationPage();
         }
 
         private void Operations(object sender, EventArgs e)
         {
-            switch (FirstSystem.SelectedItem)
+            try
             {
-                case "N10":
-                    int num = int.Parse(Number.Text);
-                    TenToBinary(num);
-                    break;
-            }
-        }
-        private void TenToBinary(int num)
-        {
+                int FirstBase = SystemNumbers[FirstSystem.SelectedIndex];
+                int SecondBase = SystemNumbers[SecondSystem.SelectedIndex];
+                EntryAnswer.Text = Convert.ToString(Convert.ToInt32(Number.Text, FirstBase), SecondBase);
+            } 
+            catch (Exception ex) { DisplayAlert("Error", ex.Message, "OK"); }
            
         }
     }

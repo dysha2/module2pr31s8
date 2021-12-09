@@ -5,10 +5,11 @@
 
     <AbsoluteLayout BackgroundColor="#32B898">
         <Label Text="Конвертер систем счисления" WidthRequest="322" HeightRequest="28" Margin="14,22,13,590" FontSize="24" FontAttributes="Bold"/>
-        <Entry Margin="20,215,20,385" WidthRequest="320" HeightRequest="40" Background="#FFFFFF" x:Name="Number"/>
+        <Entry Margin="20,215,20,385" WidthRequest="320" HeightRequest="40" 
+               Background="#FFFFFF" x:Name="Number" />
         <Picker Margin="20,292,195,308" WidthRequest="145" HeightRequest="40" x:Name="FirstSystem" Background="#FFFFFF"/>
-        <Picker Margin="195,292,20,308" WidthRequest="145" HeightRequest="40" x:Name="SeconsSystem" Background="#FFFFFF"/>
-        <Entry Margin="20,353,20,247" WidthRequest="320" HeightRequest="40" IsReadOnly="True" Background="#FFFFFF"/>
+        <Picker Margin="195,292,20,308" WidthRequest="145" HeightRequest="40" x:Name="SecondSystem" Background="#FFFFFF"/>
+        <Entry Margin="20,353,20,247" WidthRequest="320" HeightRequest="40" IsReadOnly="True" Background="#FFFFFF" x:Name="EntryAnswer"/>
         <Button Text="Вычислить" FontSize="18" HeightRequest="50" WidthRequest="150" 
                 Margin="105,555,105,35" BackgroundColor="#4A799A" Clicked="Operations"/>
     </AbsoluteLayout>
